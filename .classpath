@@ -2,8 +2,8 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="/home/alex/Desktop/akka-2.3.2/lib/scala-library.jar"/>
-	<classpathentry kind="lib" path="/home/alex/Desktop/akka-2.3.2/lib/akka/akka-actor_2.10-2.3.2.jar"/>
-	<classpathentry kind="lib" path="/home/alex/Desktop/akka-2.3.2/lib/akka/config-1.2.0.jar"/>
+	<classpathentry kind="lib" path="D:/alex/librerias/akka-2.3.2/lib/scala-library.jar"/>
+	<classpathentry kind="lib" path="D:/alex/librerias/akka-2.3.2/lib/akka/akka-actor_2.10-2.3.2.jar"/>
+	<classpathentry kind="lib" path="D:/alex/librerias/akka-2.3.2/lib/akka/config-1.2.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
