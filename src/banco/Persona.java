@@ -5,30 +5,20 @@ import akka.actor.UntypedActor;
 
 public class Persona extends UntypedActor 
 {
-	private String nombre;
-	private Cuenta cuentaCompartida;
-	private int[] transacciones;
-
-	public Persona(String nombre){
-		this.nombre = nombre;
-	}
 	
-	public void setTransacciones(int[] lista){
-		this.transacciones = lista;
-	}
-	
-	public void setCuentaCompartida(Cuenta cuenta){
-		this.cuentaCompartida = cuenta;
-	}
 
 	@Override
-	public void onReceive(Object arg0) throws Exception {
-		// TODO Auto-generated method stub
-		for (int i = 0; i < transacciones.length; i++) {
-			this.cuentaCompartida.transaccion(transacciones[i]);
+	public void onReceive(Object message) throws Exception {
+		if(message instanceof int[]){
+			int[] operaciones=(int[]) message;
+			for(int i=0; i<operaciones.length; i++){
+				Banco.cuentaCompartida.transaccion(operaciones[i]);
+			}
+			Banco.cuentaCompartida.imprimirSaldo();
 		}
-		System.out.println(nombre + " termina transacciones, saldo: $" 
-				+ Banco.cuentaCompartida.getSaldo());
+		else{
+			unhandled(message);
+		}
 	}
 	
 }
